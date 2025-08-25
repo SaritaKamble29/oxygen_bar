@@ -63,6 +63,7 @@
             <div class="col-md-8">
               <form class="form" action="edit_account.php" method="POST" enctype="multipart/form-data">
               <div class="form-group">
+                 
                 <input type="file" name="file_upload" multiple="multiple" class="btn btn-default btn-file"/>
               </div>
               <div class="form-group">
