@@ -7,7 +7,7 @@
            echo remove_junk($page_title);
             elseif(!empty($user))
            echo ucfirst($user['name']);
-            else echo "Inventory Management System";?>
+            else echo "Bar stock System";?>
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
@@ -16,7 +16,7 @@
   <body>
   <?php  if ($session->isUserLoggedIn(true)): ?>
     <header id="header">
-      <div class="logo pull-left"> Inventory System</div>
+      <div class="logo pull-left"> OXYGEN BAR</div>
       <div class="header-content">
       <div class="header-date pull-left">
        <?php
