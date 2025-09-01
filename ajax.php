@@ -5,26 +5,40 @@
 
 <?php
  // Auto suggetion
-    $html = '';
-   if(isset($_POST['product_name']) && strlen($_POST['product_name']))
-   {
-     $products = find_product_by_title($_POST['product_name']);
-     if($products){
-        foreach ($products as $product):
-           $html .= "<li class=\"list-group-item\">";
-           $html .= $product['name'];
-           $html .= "</li>";
-         endforeach;
-      } else {
+//     $html = '';
+//    if(isset($_POST['product_name']) && strlen($_POST['product_name']))
+//    {
+//      $products = find_product_by_title($_POST['product_name']);
+//      if($products){
+//         foreach ($products as $product):
+//            $html .= "<li class=\"list-group-item\">";
+//            $html .= $product['name'];
+//            $html .= "</li>";
+//          endforeach;
+//       } else {
 
-        $html .= '<li onClick=\"fill(\''.addslashes().'\')\" class=\"list-group-item\">';
-        $html .= 'Not found';
-        $html .= "</li>";
+//         $html .= '<li onClick=\"fill(\''.addslashes().'\')\" class=\"list-group-item\">';
+//         $html .= 'Not found';
+//         $html .= "</li>";
 
-      }
+//       }
 
-      echo json_encode($html);
-   }
+//       echo json_encode($html);
+//    }
+
+if (isset($_POST['barcode'])) {
+    $barcode = $db->escape($_POST['barcode']);
+    $sql = "SELECT id, name, sale_price FROM products 
+            WHERE barcode = '{$barcode}' LIMIT 1";
+    $result = $db->query($sql);
+
+    if ($db->num_rows($result) > 0) {
+        $product = $db->fetch_assoc($result);
+        echo json_encode($product);
+    } else {
+        echo json_encode(['error' => 'Product not found']);
+    }
+}
  ?>
  <?php
  // find all product

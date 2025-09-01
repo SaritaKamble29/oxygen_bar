@@ -1,5 +1,5 @@
 <?php
-define("DB_HOST", "192.168.249.194");
+define("DB_HOST", "10.182.51.194");
 // define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "root"); // If you use a password, add it here
