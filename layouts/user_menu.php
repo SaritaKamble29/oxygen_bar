@@ -6,7 +6,7 @@
     </a>
   </li>
   <li>
-    <a href="#" class="submenu-toggle">
+    <a href="sales.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-list"></i>
        <span>Sales</span>
       </a>
@@ -16,7 +16,7 @@
      </ul>
   </li>
   <li>
-    <a href="#" class="submenu-toggle">
+    <a href="sales_report.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-signal"></i>
        <span>Sales Report</span>
       </a>

@@ -22,6 +22,12 @@
     </a>
   </li>
   <li>
+    <a href="supplier.php" >
+      <i class="glyphicon glyphicon-indent-left"></i>
+      <span>Suppliers</span>
+    </a>
+  </li>
+  <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
       <span>Products</span>

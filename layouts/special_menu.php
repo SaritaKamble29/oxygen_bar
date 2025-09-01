@@ -12,7 +12,7 @@
     </a>
   </li>
   <li>
-    <a href="#" class="submenu-toggle">
+    <a href="product.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
       <span>Products</span>
     </a>
