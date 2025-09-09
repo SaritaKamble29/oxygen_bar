@@ -115,10 +115,11 @@ if (isset($_POST['add_product'])) {
               <input type="number" step="0.01" class="form-control" id="buying-price" name="buying-price" placeholder="Buying Price">
           </div>
 
-          <!-- Selling Price -->
+          <!-- Selling Price (Auto-Calculated) -->
           <div class="form-group">
               <label for="saleing-price">Selling Price</label>
               <input type="number" step="0.01" class="form-control" id="saleing-price" name="saleing-price" placeholder="Selling Price">
+              <!-- <small class="text-muted">This will auto-calculate 25% profit on Buying Price. You can override it if needed.</small> -->
           </div>
 
           <!-- Barcode -->
@@ -163,8 +164,20 @@ if (isset($_POST['add_product'])) {
   </div>
 </div>
 
-<!-- AJAX Barcode Auto-fill -->
+<!-- Scripts -->
 <script>
+// Auto-calculate Selling Price (25% more than Buying Price)
+document.getElementById('buying-price').addEventListener('input', function() {
+    let buyingPrice = parseFloat(this.value);
+    if (!isNaN(buyingPrice) && buyingPrice > 0) {
+        let sellingPrice = buyingPrice + (buyingPrice * 0.25); // 25% margin
+        document.getElementById('saleing-price').value = sellingPrice.toFixed(2);
+    } else {
+        document.getElementById('saleing-price').value = '';
+    }
+});
+
+// AJAX Barcode Auto-fill
 document.getElementById('barcode').addEventListener('change', function() {
     let barcode = this.value.trim();
     if(barcode.length > 0){
